@@ -124,9 +124,13 @@ const potion_rage = {
   stock: 15,
 };
 
-console.log(potion_soin, potion_attaque, potion_rage);
-// - Créé un objet pour stocker les informations d'une potion de soin, tu auras dans cet objet :
-//   - le nom de la potion
-//   - son prix
-//   - le stock
-// - Affiche directement l'objet dans la console
+// console.log(potion_soin, potion_attaque, potion_rage);
+// console.log(potion_soin.nom);
+// console.log(potion_soin["prix"]);
+
+const inventaire = {
+  potion_soin,
+  potion_attaque,
+  potion_rage,
+};
+console.log(inventaire);
