@@ -5,12 +5,13 @@ let nb_potion_soins = 15;
 let prix_potion_soins = 7;
 
 let boutique_oc = true;
-let argent_aventurier = 150;
+let argent_aventurier = 100;
+let mon_argent = 0;
 
-console.log("Le sorcier se nomme : " + nom_sorcier + " ! 🎉");
-console.log("La boutique s'appelle : " + nom_boutique + " ! 🎉");
-console.log("Il y a " + nb_potion_soins + " potions de soin ! 🎉");
-console.log("Elles coûtent chacune " + prix_potion_soins + " 🪙 !");
+// console.log("Le sorcier se nomme : " + nom_sorcier + " ! 🎉");
+// console.log("La boutique s'appelle : " + nom_boutique + " ! 🎉");
+// console.log("Il y a " + nb_potion_soins + " potions de soin ! 🎉");
+// console.log("Elles coûtent chacune " + prix_potion_soins + " 🪙 !");
 
 function etat_boutique(boutique_oc) {
   if (boutique_oc === true) {
@@ -102,20 +103,20 @@ function demande_potion_soin(
 
 const potion_soin = {
   nom: "Potion de soin",
-  prix: 10,
-  stock: 15,
+  prix: 40,
+  stock: 1,
 };
 
 const potion_attaque = {
-  nom: "Potion d'attaque",
-  prix: 7,
-  stock: 15,
+  nom: "Potion d'endurance",
+  prix: 1,
+  stock: 20,
 };
 
 const potion_rage = {
-  nom: "Potion de rage",
+  nom: "Potion de mana",
   prix: 2,
-  stock: 15,
+  stock: 20,
 };
 
 // console.log(potion_soin, potion_attaque, potion_rage);
@@ -127,7 +128,10 @@ const inventaire = {
   potion_attaque,
   potion_rage,
 };
-console.log(inventaire);
+
+const inventaire_aventurier = {};
+
+// console.log(inventaire);
 
 function afficher_inventaire(inventaire) {
   for (let [key, value] of Object.entries(inventaire)) {
@@ -137,14 +141,15 @@ function afficher_inventaire(inventaire) {
   }
 }
 
-afficher_inventaire(inventaire);
+// afficher_inventaire(inventaire);
 
-// - Affiche ton inventaire à l'aventurier avec une boucle `for`
-// - Pour chaque itération, affiche :
-//   - `Nom: <nom_potion>`
-//   - `Prix: <prix_potion>`
-//   - `Stock: <stock_potion>`
-// - Trouve une autre solution pour afficher **dynamiquement** chacune des propriétés de la potion **sans utiliser la notation pointée ou crochet**. Tu as plusieurs possibilités :
-//   - `for` sur `Object.keys`
-//   - `for ... in` sur ton objet
-//   - `for ... of` sur `Object.entries`
+function jeu(
+  boutique_oc,
+  prix_potion_soins,
+  nb_potion_soins,
+  argent_aventurier
+) {
+  etat_boutique(boutique_oc);
+  demande_potion_soin(prix_potion_soins, nb_potion_soins, argent_aventurier);
+}
+jeu();
