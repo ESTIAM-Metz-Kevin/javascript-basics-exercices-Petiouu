@@ -94,20 +94,39 @@ function demande_potion_soin(
 
 // console.log(demande_potion_soin(prix_potion_soins, nb_potion_soins, argent_aventurier));
 
-let Liste_potions = ["Potion de vie", "Potion d'attaque", "Potion de rage"];
-console.log(Liste_potions);
+// let Liste_potions = ["Potion de vie", "Potion d'attaque", "Potion de rage"];
+// console.log(Liste_potions);
+// console.log(Liste_potions[0]);
+// console.log(Liste_potions[Liste_potions.length - 1]);
+// for (let i = 0; i < Liste_potions.length; i++) {
+//   console.log("Nous avons de la " + Liste_potions[i]);
+// }
+// Liste_potions.push("Potion de gel");
+// console.log(Liste_potions);
+// Liste_potions.pop();
+// console.log(Liste_potions);
 
-console.log(Liste_potions[0]);
-console.log(Liste_potions[Liste_potions.length - 1]);
-for (let i = 0; i < Liste_potions.length; i++) {
-  console.log("Nous avons de la " + Liste_potions[i]);
-}
+const potion_soin = {
+  nom: "Potion de soin",
+  prix: 10,
+  stock: 15,
+};
 
-Liste_potions.push("Potion de gel");
-console.log(Liste_potions);
+const potion_attaque = {
+  nom: "Potion d'attaque",
+  prix: 7,
+  stock: 15,
+};
 
-Liste_potions.pop();
-console.log(Liste_potions);
+const potion_rage = {
+  nom: "Potion de rage",
+  prix: 2,
+  stock: 15,
+};
 
-// - Ajoute une nouvelle potion dans le tableau en utilisant la méthode `push` de l'objet Array.
-// - Affiche la liste des potions mis à jour
+console.log(potion_soin, potion_attaque, potion_rage);
+// - Créé un objet pour stocker les informations d'une potion de soin, tu auras dans cet objet :
+//   - le nom de la potion
+//   - son prix
+//   - le stock
+// - Affiche directement l'objet dans la console
