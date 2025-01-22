@@ -55,11 +55,12 @@ function demande_potion(inventaire, argent_aventurier, mon_argent) {
 
   const nb_achat = parseInt(prompt("Combien voulez-vous en acheter ?"));
   const quelle_potion = parcours_potion(inventaire, indice_achat);
-  const prix_final = nb_achat * quelle_potion.prix;
+  const prix_final = nb_achat * inventaire[quelle_potion]["prix"];
 
-  console.log(nb_achat, quelle_potion.stock, prix_final, argent_aventurier);
-
-  if (nb_achat <= quelle_potion["stock"] && prix_final <= argent_aventurier) {
+  if (
+    nb_achat <= inventaire[quelle_potion]["stock"] &&
+    prix_final <= argent_aventurier
+  ) {
     return (
       "Le prix de " +
       nb_achat +
