@@ -1,8 +1,9 @@
 const nom_sorcier = prompt("Comment te nommes-tu, sorcier ? 🧙‍♂️");
 const nom_boutique = prompt("Comment se nomme ta boutique ? 🧙‍♂️");
-var nb_potion_soins = 13;
-var prix_potion_soins = 2;
-var boutique_oc = true;
+let nb_potion_soins = 13;
+let prix_potion_soins = 2;
+let boutique_oc = true;
+let argent_aventurier = 50;
 
 console.log("Le sorcier se nomme : " + nom_sorcier + " ! 🎉");
 console.log("La boutique s'appelle : " + nom_boutique + " ! 🎉");
@@ -21,7 +22,7 @@ function etat_boutique(boutique_oc) {
   }
 }
 
-console.log(etat_boutique(boutique_oc));
+// console.log(etat_boutique(boutique_oc));
 
 function affichage(
   nom_boutique,
@@ -59,25 +60,36 @@ function affichage(
   }
 }
 
-affichage(nom_boutique, nom_sorcier, prix_potion_soins, nb_potion_soins);
+// affichage(nom_boutique, nom_sorcier, prix_potion_soins, nb_potion_soins);
 
-function demande_potion_soin(prix_potion_soins, nb_potion_soins) {
+function demande_potion_soin(
+  prix_potion_soins,
+  nb_potion_soins,
+  argent_aventurier
+) {
   const nb_achat = prompt(
     "Combien de potion(s) de soin souhaitez-vous acheter ?"
   );
-  if (nb_achat <= nb_potion_soins) {
+  const prix_final = nb_achat * prix_potion_soins;
+  if (nb_achat <= nb_potion_soins && prix_final <= argent_aventurier) {
     return (
       "Le prix de " +
       nb_achat +
       " potions de soins : " +
-      nb_achat * prix_potion_soins +
+      +prix_final +
       " 🪙 mon cher Aventurier. 💸"
     );
   } else {
-    return "Il n'y a pas assez de potions disponibles";
+    return "Vous ne pouvez pas acheter autant de potions";
   }
 }
 
-console.log(demande_potion_soin(prix_potion_soins, nb_potion_soins));
+console.log(
+  demande_potion_soin(prix_potion_soins, nb_potion_soins, argent_aventurier)
+);
 
-// Demande avec `prompt` une quantité de potion de soin, et affiche ensuite dans la `console` => `Prix de <quantite_potion> potions de soins : <prix_total> 🪙 mon cher Aventurier. 💸`.
+// - Créé une variable pour stocker l'argent de l'aventurier, initialise-la avec une valeur de ton choix.
+// - Vérifie si l'aventurier a assez d'argent pour acheter la quantité de potion demandée.
+// - Soustrais la quantité de potion demandée du stock et soustrais le prix total de la bourse de l'aventurier.
+//   - ⚠️ **Attention**, il faut que l'aventurier ai assez d'argent pour pouvoir acheter les potions !
+//   - ⚠️ **Attention**, il faut qu'il y ait assez de potion en stock pour pouvoir acheter les potions !
