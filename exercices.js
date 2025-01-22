@@ -1,6 +1,6 @@
 const nom_sorcier = prompt("Comment te nommes-tu, sorcier ? 🧙‍♂️");
 const nom_boutique = prompt("Comment se nomme ta boutique ? 🧙‍♂️");
-var nb_potion_soins = 3;
+var nb_potion_soins = 13;
 var prix_potion_soins = 2;
 var boutique_oc = true;
 
@@ -60,3 +60,24 @@ function affichage(
 }
 
 affichage(nom_boutique, nom_sorcier, prix_potion_soins, nb_potion_soins);
+
+function demande_potion_soin(prix_potion_soins, nb_potion_soins) {
+  const nb_achat = prompt(
+    "Combien de potion(s) de soin souhaitez-vous acheter ?"
+  );
+  if (nb_achat <= nb_potion_soins) {
+    return (
+      "Le prix de " +
+      nb_achat +
+      " potions de soins : " +
+      nb_achat * prix_potion_soins +
+      " 🪙 mon cher Aventurier. 💸"
+    );
+  } else {
+    return "Il n'y a pas assez de potions disponibles";
+  }
+}
+
+console.log(demande_potion_soin(prix_potion_soins, nb_potion_soins));
+
+// Demande avec `prompt` une quantité de potion de soin, et affiche ensuite dans la `console` => `Prix de <quantite_potion> potions de soins : <prix_total> 🪙 mon cher Aventurier. 💸`.
