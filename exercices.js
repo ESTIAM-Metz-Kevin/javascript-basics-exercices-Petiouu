@@ -4,12 +4,6 @@ const nom_boutique = prompt("Comment se nomme ta boutique ? 🧙‍♂️");
 let nb_potion_soins = 15;
 let prix_potion_soins = 7;
 
-let nb_potion_attaque = 15;
-let prix_potion_attaque = 5;
-
-let nb_potion_rage = 15;
-let prix_potion_rage = 2;
-
 let boutique_oc = true;
 let argent_aventurier = 150;
 
@@ -134,3 +128,23 @@ const inventaire = {
   potion_rage,
 };
 console.log(inventaire);
+
+function afficher_inventaire(inventaire) {
+  for (let [key, value] of Object.entries(inventaire)) {
+    console.log("Nom : " + value["nom"]);
+    console.log("Prix : " + value["prix"]);
+    console.log("Stock : " + value["stock"]);
+  }
+}
+
+afficher_inventaire(inventaire);
+
+// - Affiche ton inventaire à l'aventurier avec une boucle `for`
+// - Pour chaque itération, affiche :
+//   - `Nom: <nom_potion>`
+//   - `Prix: <prix_potion>`
+//   - `Stock: <stock_potion>`
+// - Trouve une autre solution pour afficher **dynamiquement** chacune des propriétés de la potion **sans utiliser la notation pointée ou crochet**. Tu as plusieurs possibilités :
+//   - `for` sur `Object.keys`
+//   - `for ... in` sur ton objet
+//   - `for ... of` sur `Object.entries`
