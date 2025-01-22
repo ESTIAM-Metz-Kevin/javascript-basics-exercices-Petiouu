@@ -97,5 +97,12 @@ function demande_potion_soin(
 let Liste_potions = ["Potion de vie", "Potion d'attaque", "Potion de rage"];
 console.log(Liste_potions);
 
-// - Créé un tableau qui contient les noms de trois potions que tu vends dans ta boutique.
-// - Affiche le tableau directement dans la console.
+console.log(Liste_potions[0]);
+console.log(Liste_potions[Liste_potions.length - 1]);
+for (let i = 0; i < Liste_potions.length; i++) {
+  console.log("Nous avons de la " + Liste_potions[i]);
+}
+
+// - Affiche le nom de la première potion.
+// - Affiche le nom de la dernière potion **sans utiliser l'indice directement, mais en utilisant la taille du tableau** (en utilisant la propriété length de l'objet Array).
+// - Affiche le nom de chaque potions avec une boucle `for` et affiche le message `Nous avons de la <nom_potion> !`
