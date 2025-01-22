@@ -1,9 +1,17 @@
 const nom_sorcier = prompt("Comment te nommes-tu, sorcier ? 🧙‍♂️");
 const nom_boutique = prompt("Comment se nomme ta boutique ? 🧙‍♂️");
-let nb_potion_soins = 13;
-let prix_potion_soins = 2;
+
+let nb_potion_soins = 15;
+let prix_potion_soins = 7;
+
+let nb_potion_attaque = 15;
+let prix_potion_attaque = 5;
+
+let nb_potion_rage = 15;
+let prix_potion_rage = 2;
+
 let boutique_oc = true;
-let argent_aventurier = 50;
+let argent_aventurier = 150;
 
 console.log("Le sorcier se nomme : " + nom_sorcier + " ! 🎉");
 console.log("La boutique s'appelle : " + nom_boutique + " ! 🎉");
@@ -84,12 +92,10 @@ function demande_potion_soin(
   }
 }
 
-console.log(
-  demande_potion_soin(prix_potion_soins, nb_potion_soins, argent_aventurier)
-);
+// console.log(demande_potion_soin(prix_potion_soins, nb_potion_soins, argent_aventurier));
 
-// - Créé une variable pour stocker l'argent de l'aventurier, initialise-la avec une valeur de ton choix.
-// - Vérifie si l'aventurier a assez d'argent pour acheter la quantité de potion demandée.
-// - Soustrais la quantité de potion demandée du stock et soustrais le prix total de la bourse de l'aventurier.
-//   - ⚠️ **Attention**, il faut que l'aventurier ai assez d'argent pour pouvoir acheter les potions !
-//   - ⚠️ **Attention**, il faut qu'il y ait assez de potion en stock pour pouvoir acheter les potions !
+let Liste_potions = ["Potion de vie", "Potion d'attaque", "Potion de rage"];
+console.log(Liste_potions);
+
+// - Créé un tableau qui contient les noms de trois potions que tu vends dans ta boutique.
+// - Affiche le tableau directement dans la console.
