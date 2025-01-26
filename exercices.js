@@ -142,14 +142,3 @@ function afficher_inventaire(inventaire) {
 }
 
 // afficher_inventaire(inventaire);
-
-function jeu(
-  boutique_oc,
-  prix_potion_soins,
-  nb_potion_soins,
-  argent_aventurier
-) {
-  etat_boutique(boutique_oc);
-  demande_potion_soin(prix_potion_soins, nb_potion_soins, argent_aventurier);
-}
-jeu();
